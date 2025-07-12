@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Employee Directory</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- search and filter section -->
+        <div class="search-filter-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search by name or email...">
+            </div>
+
+            <button class="filter-btn" id="filter-btn">Filter</button>
+            <div class="filter-dropdown" id="filter-dropdown">
+                <div class="filter-group">
+                    <label for="filter-first-name">First Name</label>
+                    <input type="text" id="filter-first-name" placeholder="Enter first name">
+                </div>
+                <div class="filter-group">
+                    <label for="filter-department">Department</label>
+                    <select id="filter-department">
+                        <option value="">All Departments</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Operations">Operations</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-role">Role</label>
+                    <select id="filter-role">
+                        <option value="">All Roles</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Developer">Developer</option>
+                        <option value="Designer">Designer</option>
+                        <option value="Analyst">Analyst</option>
+                        <option value="Coordinator">Coordinator</option>
+                    </select>
+                </div>
+                <div class="filter-actions">
+                    <button class="reset-filter" id="reset-filter">Reset</button>
+                    <button class="apply-filter" id="apply-filter">Apply</button>
+                </div>
+            </div>
+
+            <div class="sort-dropdown">
+                <button class="sort-btn" id="sort-btn">Sort By</button>
+                <div class="sort-options" id="sort-options">
+                    <div class="sort-option" data-sort="firstName-asc">First Name (A-Z)</div>
+                    <div class="sort-option" data-sort="firstName-desc">First Name (Z-A)</div>
+                    <div class="sort-option" data-sort="department-asc">Department (A-Z)</div>
+                    <div class="sort-option" data-sort="department-desc">Department (Z-A)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Employee Button -->
+        <button class="add-employee-btn" id="add-employee-btn">
+            <span>+</span> Add Employee
+        </button>
+
+        <!-- Employee Grid -->
+        <div class="employee-grid" id="employee-grid">
+            <!-- Employee cards will be inserted here by JavaScript -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+            <!-- Pagination controls will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Add/Edit Employee Form Overlay -->
+    <div class="form-overlay" id="form-overlay">
+        <div class="employee-form">
+            <button class="close-form" id="close-form">&times;</button>
+            <h2 class="form-title" id="form-title">Add Employee</h2>
+
+            <form id="employee-form">
+                <input type="hidden" id="employee-id">
+
+                <div class="form-group" id="first-name-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" required>
+                    <div class="error" id="first-name-error">First name is required</div>
+                </div>
+
+                <div class="form-group" id="last-name-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" required>
+                    <div class="error" id="last-name-error">Last name is required</div>
+                </div>
+
+                <div class="form-group" id="email-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                    <div class="error" id="email-error">Please enter a valid email</div>
+                </div>
+
+                <div class="form-group" id="department-group">
+                    <label for="department">Department</label>
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Operations">Operations</option>
+                    </select>
+                    <div class="error" id="department-error">Department is required</div>
+                </div>
+
+                <div class="form-group" id="role-group">
+                    <label for="role">Role</label>
+                    <select id="role" required>
+                        <option value="">Select Role</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Developer">Developer</option>
+                        <option value="Designer">Designer</option>
+                        <option value="Analyst">Analyst</option>
+                        <option value="Coordinator">Coordinator</option>
+                    </select>
+                    <div class="error" id="role-error">Role is required</div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" id="cancel-form">Cancel</button>
+                    <button type="submit" class="save-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
